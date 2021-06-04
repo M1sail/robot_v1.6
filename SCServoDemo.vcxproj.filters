@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="SCServo">
+      <UniqueIdentifier>{82ea56cc-4c78-4aca-86a1-646bc14a6da1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源">
+      <UniqueIdentifier>{941f4761-b704-4617-906f-9d2280482c6a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="SCServo\SCComm.cpp">
+      <Filter>SCServo</Filter>
+    </ClCompile>
+    <ClCompile Include="SCServo\SCS.cpp">
+      <Filter>SCServo</Filter>
+    </ClCompile>
+    <ClCompile Include="SCServo\SCSCL.cpp">
+      <Filter>SCServo</Filter>
+    </ClCompile>
+    <ClCompile Include="SCServo\SCSerial.cpp">
+      <Filter>SCServo</Filter>
+    </ClCompile>
+    <ClCompile Include="SCServo\SMSBL.cpp">
+      <Filter>SCServo</Filter>
+    </ClCompile>
+    <ClCompile Include="SCServo\SMSCL.cpp">
+      <Filter>SCServo</Filter>
+    </ClCompile>
+    <ClCompile Include="robot_v1.6.cpp" />
+    <ClCompile Include="Leapmotion.cpp">
+      <Filter>源</Filter>
+    </ClCompile>
+    <ClCompile Include="调试.cpp">
+      <Filter>源</Filter>
+    </ClCompile>
+    <ClCompile Include="driver.cpp">
+      <Filter>源</Filter>
+    </ClCompile>
+    <ClCompile Include="common.cpp">
+      <Filter>源</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="SCServo\INST.h">
+      <Filter>SCServo</Filter>
+    </ClInclude>
+    <ClInclude Include="SCServo\SCComm.h">
+      <Filter>SCServo</Filter>
+    </ClInclude>
+    <ClInclude Include="SCServo\SCS.h">
+      <Filter>SCServo</Filter>
+    </ClInclude>
+    <ClInclude Include="SCServo\SCSCL.h">
+      <Filter>SCServo</Filter>
+    </ClInclude>
+    <ClInclude Include="SCServo\SCSerial.h">
+      <Filter>SCServo</Filter>
+    </ClInclude>
+    <ClInclude Include="SCServo\SCServo.h">
+      <Filter>SCServo</Filter>
+    </ClInclude>
+    <ClInclude Include="SCServo\SMSBL.h">
+      <Filter>SCServo</Filter>
+    </ClInclude>
+    <ClInclude Include="SCServo\SMSCL.h">
+      <Filter>SCServo</Filter>
+    </ClInclude>
+    <ClInclude Include="robot.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+</Project>
