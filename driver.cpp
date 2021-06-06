@@ -155,9 +155,9 @@ int Driver::insure(int p[], int isRL)                   //判定是否超出舵机转角范
     }
 }
 
-void Driver::wr(float pth[], int isRL, SMSBL &sm)
+void Driver::wr(float pth[], int isRL, SMSBL& sm)
 {
-    int p[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
+    int p[8] = { 0, 0, 0, 0, 0, 0, 0, 0 }; //
     int num;
 
     if (isRL == 0)
@@ -170,18 +170,19 @@ void Driver::wr(float pth[], int isRL, SMSBL &sm)
         memcpy(map0, map_L, 128);
         num = 11;
     }
+    else {}
 
     for (int i = 0; i < 8; i ++)
     {
-        p[i] = int(map(pth[i] * 180 / Pi, map0[i][0], map0[i][1], map0[i][2], map0[i][3]));
+        p[i] = int(map(pth[i] * 180 / Pi, map0[i][0], map0[i][1], map0[i][2], map0[i][3])); // input loction p
     }
 
     if (isRL == 0)
     {
-        for (int i = 0; i < 8; i++)
+        for (int i = 0; i < 8; i++)  // 传入七个角度 
         {
             pth_R_pre[i] = pth_R[i];
-            pth_R[i] = p[i];
+            pth_R[i] = p[i]; 
             ptm[i] = pth_R[i];
             ptm_pre[i] = pth_R_pre[i];
         }
@@ -196,6 +197,7 @@ void Driver::wr(float pth[], int isRL, SMSBL &sm)
             ptm_pre[i] = pth_L_pre[i];
         }
     }
+    else {}
 
     if (insure(p, isRL))
     {
@@ -203,16 +205,15 @@ void Driver::wr(float pth[], int isRL, SMSBL &sm)
         {
             v = 4 * abs(ptm[i] - ptm_pre[i]);    if (v > 1000) v = 1000;
             a = 0.1 * v;    if (a < 1) a = 1;
-            if (v < 10) break;
-
-            if (i == 5) sm.WritePosEx(num + i, p[i], 2 * v, 2 * a);         //舵机ID、目标位置、速度、加速度
-            else sm.WritePosEx(num + i, p[i], v, a);
+            if (v > 10)
+            {
+                if (i == 5) sm.WritePosEx(num + i, p[i], 2 * v, 2 * a);         //舵机ID、目标位置、速度、加速度
+                else sm.WritePosEx(num + i, p[i], v, a);
+            }
+            else{}
         }
     }
-    else
-    {
-        cout << "它有点跟不上，可以回一点";
-    }
+    else   cout << "它有点跟不上，可以慢一点";
 }
 
 void Driver::drive(float data[5][3], SMSBL &sm)
