@@ -46,7 +46,9 @@ int main(int argc, char** argv)
 			counter = 0;
 			if (start)
 			{
-				cout << "要开始咯" << endl << "它有点笨笨的，有点耐心喔~" << endl;
+				cout << "要开始咯" << endl;
+				cout << "可以把手恢复自然状态啦" << endl;
+				cout << "它有点笨笨的，有点耐心喔~" << endl;
 				delay(3000);
 			}
 			else
@@ -68,7 +70,7 @@ int main(int argc, char** argv)
 			dr.drive(mylp.data, sm);                 //计算各关节角并写入舵机
 		}
 
-		delay(200);
+		delay(150);
 	}
 
 	return 0;

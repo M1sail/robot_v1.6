@@ -40,6 +40,7 @@
     <ClCompile Include="common.cpp">
       <Filter>源</Filter>
     </ClCompile>
+    <ClCompile Include="动一动.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SCServo\INST.h">
